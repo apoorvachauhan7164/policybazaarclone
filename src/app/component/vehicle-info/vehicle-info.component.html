@@ -2,21 +2,65 @@
   <div class="row">
     <!-- Left View -->
     <div class="col-lg-6">
-      <div style="text-align: center; margin-bottom: 10%; margin-top: 5%">
-        <h2>Your Vehicle Details</h2>
-        <!-- City and RTO -->
-        <input [(ngModel)]="rtoNumber" name="rtoNumber" type="text" class="form-control" id="username" placeholder="Select City & RTO"
-          style="width: 90%; margin-bottom: 3%; margin-left: 5%">
-        <!-- Manufacture -->
-        <input [(ngModel)]="manufac" name="manufac" type="text" class="form-control" id="manufacturer" placeholder="Manufacturer"
-          style="width: 90%; margin-bottom: 3%; margin-left: 5%">
-        <!-- Model and Variant -->
-        <input [(ngModel)]="model" type="text" class="form-control" id="Model & Variant" placeholder="Model & Variant" style="width: 90%; margin-bottom: 3%;margin-left: 5%">
-        <!-- Registration Number -->
-        <input [(ngModel)]="regs" name="Registration Year" type="text" class="form-control" id="Registration Year" placeholder="Registration Year"
-          style="width: 90%; margin-bottom: 3%; margin-left: 5%">
-        <button class="btn btn-primary btn-lg" style="height: 70%; align-self: center" routerLink="/cards">View Quotes</button>
-      </div>
+      <form novalidate #feed="ngForm" (ngSubmit)="onSubmit(feed)">
+        <div style="text-align: center; margin-bottom: 10%; margin-top: 5%">
+          <h2>Your Vehicle Details</h2>
+          <!-- City and RTO -->
+          <input 
+          [(ngModel)]="formData.rtoNumber"
+          name="rtoNumber"
+          #cityForm="ngModel"
+          type="text" 
+          class="form-control" 
+          id="username" 
+          placeholder="Select City & RTO"
+          style="width: 90%; margin-bottom: 3%; margin-left: 5%"
+          required
+          >
+          <!-- Manufacture -->
+          <input 
+          [(ngModel)]="formData.manufac"
+          name="manufac" 
+          #manufacturerForm="ngModel"
+          type="text" 
+          class="form-control" 
+          id="manufacturer"
+          required
+          placeholder="Manufacturer"
+          style="width: 90%; margin-bottom: 3%; margin-left: 5%"
+          >
+          <!-- Model and Variant -->
+          <input 
+          [(ngModel)]="formData.model"
+          name="model"
+          #modelForm="ngModel"
+          type="text"
+          class="form-control" 
+          id="Model & Variant" 
+          placeholder="Model & Variant" 
+          style="width: 90%; margin-bottom: 3%;margin-left: 5%"
+          required
+          >
+          <!-- Registration Number -->
+          <input 
+          [(ngModel)]="formData.regs"
+          name="regs"
+          #registrationForm="ngModel"
+          type="text" 
+          class="form-control" 
+          id="Registration Year" 
+          placeholder="Registration Year"
+          style="width: 90%; margin-bottom: 3%; margin-left: 5%"
+          req
+          >
+          <input 
+          type="submit" 
+          value="View Quotes"
+          class="btn btn-primary btn-lg" 
+          style="height: 70%; align-self: center"
+          >
+        </div>
+      </form>
     </div>
 
     <!-- Right View  -->

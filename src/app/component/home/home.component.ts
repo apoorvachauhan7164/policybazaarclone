@@ -33,6 +33,7 @@ export class HomeComponent {
   onSubmit({value, valid}) {
     if (valid) {
       console.log(value);
+      this.goToVehicleInfo();
     } else {
       console.log('Form is invalid');
     }
