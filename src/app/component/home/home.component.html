@@ -1,0 +1,47 @@
+<div class="container" style="background-color: #b70000; background-size: 100%">
+
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <!-- Left View -->
+    <div class="col-lg-6">
+      <img style="background-size:100%;" src="https://twowheeler.policybazaar.com/images/akshay.png">
+      <!-- <div style="border: 1px black solid; text-align: center; margin-top: 5%" [formGroup]="GetDetails"> -->
+    </div>
+
+    <!-- Right View  -->
+    <div class="col-lg-6">
+        <!-- Initial Frame -->
+        <form novalidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div style="border: 0px black solid; text-align: center; background-color: #c60000" class="form-group">
+            <h2 style="color: white">Two Wheeler Insurance</h2>
+            <p  style="color: rgb(218, 214, 214)">Even if your insurance has expired, renew instantly without any inspection or documentation. Let’s begin with your
+              vehicle’s details.</p>
+            <input 
+            type="text"
+            class="form-control"
+            [(ngModel)]="data.regNumber"
+            name="regNumber"
+            #userRegistration="ngModel"
+            required
+            minlength="10" 
+            style="width:70%; text-align:center; display:inline-block"
+            placeholder="Enter Registration Number:  (Example DL-1-AB-1234)" 
+            >
+            <input
+            type="submit"
+            value="Get Details"
+            (click)='goToVehicleInfo()' 
+            class="btn btn-primary btn-lg" 
+            style="width: 50%;margin-right: 5%; margin-top: 5%; margin-bottom: 5%"
+            >
+          </div>
+        </form>
+        <!-- Frame Switch div end -->
+      <!-- col-lg-6 Right Pane end -->
+    </div>
+    <!-- row end -->
+  </div>
+  <!-- container end -->
+</div>

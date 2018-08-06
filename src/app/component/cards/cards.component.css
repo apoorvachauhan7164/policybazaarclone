@@ -1,0 +1,44 @@
+.container1 {
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+    margin: auto;
+    width: 50%;
+    background-color: white;
+    margin-bottom: 1%;
+    justify-content: space-around;
+  }
+  .container1 div {
+    border-right: 1px #bbb solid;
+    padding: 10px; 
+  }
+  .box1 {
+    display: flex; 
+    align-items: center;
+    min-width: 25px;
+    max-width: 200px;
+  }
+  .box1 img {
+    border: 1px white solid;
+  }
+  .container1 div div {
+    border: 0px;
+  }
+  p {
+    display: inline-block;
+    width: 100%;
+  }
+  .box2 {
+    display: flex; 
+    flex-direction: column;
+  }
+  .box3 {
+    display: flex; 
+    align-items: center;
+  }
+  .box4 {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
