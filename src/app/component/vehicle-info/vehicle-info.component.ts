@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
 })
 export class VehicleInfoComponent {
 
+  // frame => manufacturer, modelVariant, registrationYear, companyRTO
   frame: string;
   formData = {
     rtoNumber: '',
@@ -21,23 +22,25 @@ export class VehicleInfoComponent {
 
   fireEvent(e) {
    console.log(e.target.id);
-   this.formData.rtoNumber = e.target.id;
+   this.formData.rtoNumber = e.target.id.toUpperCase();
+   this.frame = 'manufacturer';
   }
 
   typeEvent(e) {
    console.log(e.target.id);
-   this.formData.manufac = e.target.id;
+   this.formData.manufac = e.target.id.toUpperCase();
    this.frame = 'modelVariant';
   }
 
   modEvent(e) {
    console.log(e.target.id);
-   this.formData.model = e.target.id;
+   this.formData.model = e.target.id.toUpperCase();
+   this.frame = 'registrationYear';
   }
 
   regEvent(e) {
    console.log(e.target.id);
-   this.formData.regs = e.target.id;
+   this.formData.regs = e.target.id.toUpperCase();
   }
 
   goToCards() {

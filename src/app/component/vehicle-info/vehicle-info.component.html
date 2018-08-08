@@ -62,9 +62,9 @@
         </div>
       </form>
     </div>
-
+    
     <!-- Right View  -->
-    <div class="col-lg-6">
+    <div class="col-lg-6" style="border-left: 1px rgb(182, 155, 155) solid">
       <div [ngSwitch]="frame">
         <!-- Second Frame (Company and RTO) -->
         <div *ngSwitchCase="'companyRTO'" style="text-align: center">
@@ -72,11 +72,11 @@
             <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
               <button (click)="frame='initial'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Back</button>
               <h2>Select City & RTO</h2>
-              <button (click)="frame='manufacturer'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button>
+              <!-- <button (click)="frame='manufacturer'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
             </div>
             <div>
               <button (click)="genre='Delhi' " class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">Delhi </button>
-              <button (click)="genre='Noida, Ghaziabad, Gurgaon' " class="btn btn-warning btn-lg" style="width: 45%; margin-bottom: 5%;">Noida, Ghaziabad, Gurgaon </button>
+              <button (click)="genre='Noida, Ghaziabad, Gurgaon'" class="btn btn-warning btn-lg" style="width: 45%; margin-bottom: 5%;">Noida, Ghaziabad, Gurgaon </button>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Delhi'">
                 <button (click)="fireEvent($event)" id="DL10" style="margin-right: 1%; width: 20%">DL10</button>
                 <button (click)="fireEvent($event)" id="DL11" style="margin-right: 1%; width: 20%">DL11</button>
@@ -180,18 +180,28 @@
             <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
               <button (click)="frame='companyRTO'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Back</button>
               <h2>Select a Manufacturer</h2>
-              <button (click)="frame='modelVariant'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button>
+              <!-- <button (click)="frame='modelVariant'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
             </div>
-            <div style="margin: auto; border: 1px solid black;">
-              <button (click)="typeEvent($event)" id="honda" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HONDA</button>
-              <button (click)="typeEvent($event)" id="bajaj" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">BAJAJ</button>
-              <button (click)="typeEvent($event)" id="hero" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HERO HONDA</button>
-              <button (click)="typeEvent($event)" id="tvs" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">TVS</button>
-              <button (click)="typeEvent($event)" id="yamaha" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">YAMAHA</button>
-              <button (click)="typeEvent($event)" id="suzuki" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SUZUKI</button>
-              <button (click)="typeEvent($event)" id="mahi" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">MAHINDRA</button>
-              <button (click)="typeEvent($event)" id="ktm" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">KTM</button>
-              <button (click)="typeEvent($event)" id="harley" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HARLEY DAVIDSON</button>
+            <div class="manufacturer_di" style="display: flex; align-content: center; flex-direction: column; border: 1px black solid; flex-wrap: wrap">
+              <div class="manufacturer_di">
+                <button (click)="typeEvent($event)" id="honda" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HONDA</button>
+                <button (click)="typeEvent($event)" id="bajaj" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">BAJAJ</button>
+              </div>
+              <div class="manufacturer_di">
+                <button (click)="typeEvent($event)" id="hero" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HERO HONDA</button>
+                <button (click)="typeEvent($event)" id="tvs" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">TVS</button>  
+              </div>
+              <div class="manufacturer_di">
+                <button (click)="typeEvent($event)" id="yamaha" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">YAMAHA</button>
+                <button (click)="typeEvent($event)" id="suzuki" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SUZUKI</button>
+              </div>
+              <div class="manufacturer_di">
+                <button (click)="typeEvent($event)" id="mahi" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">MAHINDRA</button>
+                <button (click)="typeEvent($event)" id="ktm" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">KTM</button>
+              </div>
+              <div class="manufacturer_di">
+                <button (click)="typeEvent($event)" id="harley" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HARLEY DAVIDSON</button>
+              </div>
             </div>
           </div>
         </div>
@@ -202,7 +212,7 @@
             <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
               <button (click)="frame='manufacturer'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Back</button>
               <h2>Select a Model</h2>
-              <button (click)="frame='registrationYear'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button>
+              <!-- <button (click)="frame='registrationYear'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
 
             </div>
             <button (click)="modEvent($event)" id="APACHE" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">APACHE</button>
@@ -226,7 +236,7 @@
             <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
 
               <h2>Select a Registration Year</h2>
-              <button (click)="frame='#'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button>
+              <!-- <button (click)="frame='#'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
 
             </div>
             <button (click)="regEvent($event)" id="2017" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2017</button>

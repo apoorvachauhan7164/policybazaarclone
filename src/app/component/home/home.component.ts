@@ -10,14 +10,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
-  genre = 'delhi';
-  showList = false;
-  rtoNumber;
-  manufac;
-  model;
-  regs;
-  frame = 'initial';
   title = 'Two Wheeler Insurance';
   data = {
     regNumber: ''
