@@ -3,121 +3,80 @@
     <!-- Left View -->
     <div class="col-lg-6">
       <form novalidate #feed="ngForm" (ngSubmit)="onSubmit(feed)">
-        <div style="text-align: center; margin-bottom: 10%; margin-top: 5%">
+        <div class="form-group" style="text-align: center; margin-bottom: 10%; margin-top: 5%">
           <h2>Your Vehicle Details</h2>
           <!-- City and RTO -->
-          <input 
-          [(ngModel)]="formData.rtoNumber"
-          name="rtoNumber"
-          #cityForm="ngModel"
-          type="text" 
-          class="form-control" 
-          id="username" 
-          placeholder="Select City & RTO"
-          style="width: 90%; margin-bottom: 3%; margin-left: 5%"
-          required
-          >
+          <input [(ngModel)]="formData.rtoNumber" name="rtoNumber" #cityForm="ngModel" type="text" class="form-control" id="username"
+            placeholder="Select City & RTO" style="width: 90%; margin-bottom: 3%; margin-left: 5%" required>
           <!-- Manufacture -->
-          <input 
-          [(ngModel)]="formData.manufac"
-          name="manufac" 
-          #manufacturerForm="ngModel"
-          type="text" 
-          class="form-control" 
-          id="manufacturer"
-          required
-          placeholder="Manufacturer"
-          style="width: 90%; margin-bottom: 3%; margin-left: 5%"
-          >
+          <input [(ngModel)]="formData.manufacturer" name="manufacturer" #manufacturerForm="ngModel" type="text" class="form-control"
+            id="manufacturer" required placeholder="Manufacturer" style="width: 90%; margin-bottom: 3%; margin-left: 5%">
           <!-- Model and Variant -->
-          <input 
-          [(ngModel)]="formData.model"
-          name="model"
-          #modelForm="ngModel"
-          type="text"
-          class="form-control" 
-          id="Model & Variant" 
-          placeholder="Model & Variant" 
-          style="width: 90%; margin-bottom: 3%;margin-left: 5%"
-          required
-          >
+          <input [(ngModel)]="formData.model" name="model" #modelForm="ngModel" type="text" class="form-control" id="Model & Variant"
+            placeholder="Model & Variant" style="width: 90%; margin-bottom: 3%;margin-left: 5%" required>
           <!-- Registration Number -->
-          <input 
-          [(ngModel)]="formData.regs"
-          name="regs"
-          #registrationForm="ngModel"
-          type="text" 
-          class="form-control" 
-          id="Registration Year" 
-          placeholder="Registration Year"
-          style="width: 90%; margin-bottom: 3%; margin-left: 5%"
-          req
-          >
-          <input 
-          type="submit" 
-          value="View Quotes"
-          class="btn btn-primary btn-lg" 
-          style="height: 70%; align-self: center"
-          >
+          <input [(ngModel)]="formData.registration" name="registration" #registrationForm="ngModel" type="text" class="form-control"
+            id="Registration Year" placeholder="Registration Year" style="width: 90%; margin-bottom: 3%; margin-left: 5%" req>
+          <input type="submit" value="View Quotes" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">
         </div>
       </form>
     </div>
-    
+
     <!-- Right View  -->
     <div class="col-lg-6" style="border-left: 1px rgb(182, 155, 155) solid">
       <div [ngSwitch]="frame">
         <!-- Second Frame (Company and RTO) -->
         <div *ngSwitchCase="'companyRTO'" style="text-align: center">
           <div [ngSwitch]="genre">
-            <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
-              <button (click)="frame='initial'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Back</button>
-              <h2>Select City & RTO</h2>
+            <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: flex-start">
+              <button routerLink="/" class="btn btn-primary btn-lg" style="height: 70%;">Back</button>
               <!-- <button (click)="frame='manufacturer'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
             </div>
+            <h2 style="margin: 5%">Select City & RTO</h2>
             <div>
-              <button (click)="genre='Delhi' " class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">Delhi </button>
+              <button (click)="genre='Delhi'" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">Delhi </button>
               <button (click)="genre='Noida, Ghaziabad, Gurgaon'" class="btn btn-warning btn-lg" style="width: 45%; margin-bottom: 5%;">Noida, Ghaziabad, Gurgaon </button>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Delhi'">
-                <button (click)="fireEvent($event)" id="DL10" style="margin-right: 1%; width: 20%">DL10</button>
-                <button (click)="fireEvent($event)" id="DL11" style="margin-right: 1%; width: 20%">DL11</button>
-                <button (click)="fireEvent($event)" id="DL12" style="margin-right: 1%; width: 20%">DL12</button>
-                <button (click)="fireEvent($event)" id="DL13" style="margin-right: 1%; width: 20%">DL13</button>
-                <button (click)="fireEvent($event)" id="DL14" style="margin-right: 1%; width: 20%">DL14</button>
-                <button (click)="fireEvent($event)" id="DL1S" style="margin-right: 1%; width: 20%">DL1S</button>
-                <button (click)="fireEvent($event)" id="DL2S" style="margin-right: 1%; width: 20%">DL2S</button>
-                <button (click)="fireEvent($event)" id="DL3S" style="margin-right: 1%; width: 20%">DL3S</button>
-                <button (click)="fireEvent($event)" id="DL4S" style="margin-right: 1%; width: 20%">DL4S</button>
-                <button (click)="fireEvent($event)" id="DL5S" style="margin-right: 1%; width: 20%">DL5S</button>
-                <button (click)="fireEvent($event)" id="DL6S" style="margin-right: 1%; width: 20%">DL6S</button>
-                <button (click)="fireEvent($event)" id="DL7S" style="margin-right: 1%; width: 20%">DL7S</button>
-                <button (click)="fireEvent($event)" id="DL8S" style="margin-right: 1%; width: 20%">DL8S</button>
-                <button (click)="fireEvent($event)" id="DL9S" style="margin-right: 1%; width: 20%">DL9S</button>
+                <button (click)="numberSelect($event)" id="DL10" style="margin-right: 1%; width: 20%">DL10</button>
+                <button (click)="numberSelect($event)" id="DL11" style="margin-right: 1%; width: 20%">DL11</button>
+                <button (click)="numberSelect($event)" id="DL12" style="margin-right: 1%; width: 20%">DL12</button>
+                <button (click)="numberSelect($event)" id="DL13" style="margin-right: 1%; width: 20%">DL13</button>
+                <button (click)="numberSelect($event)" id="DL14" style="margin-right: 1%; width: 20%">DL14</button>
+                <button (click)="numberSelect($event)" id="DL1S" style="margin-right: 1%; width: 20%">DL1S</button>
+                <button (click)="numberSelect($event)" id="DL2S" style="margin-right: 1%; width: 20%">DL2S</button>
+                <button (click)="numberSelect($event)" id="DL3S" style="margin-right: 1%; width: 20%">DL3S</button>
+                <button (click)="numberSelect($event)" id="DL4S" style="margin-right: 1%; width: 20%">DL4S</button>
+                <button (click)="numberSelect($event)" id="DL5S" style="margin-right: 1%; width: 20%">DL5S</button>
+                <button (click)="numberSelect($event)" id="DL6S" style="margin-right: 1%; width: 20%">DL6S</button>
+                <button (click)="numberSelect($event)" id="DL7S" style="margin-right: 1%; width: 20%">DL7S</button>
+                <button (click)="numberSelect($event)" id="DL8S" style="margin-right: 1%; width: 20%">DL8S</button>
+                <button (click)="numberSelect($event)" id="DL9S" style="margin-right: 1%; width: 20%">DL9S</button>
               </div>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Noida, Ghaziabad, Gurgaon'">
-                <button (click)="fireEvent($event)" id="UP16" style="margin-right: 1%; width: 20%">UP16</button>
-                <button (click)="fireEvent($event)" id="UP14" style="margin-right: 1%; width: 20%">UP14</button>
-                <button (click)="fireEvent($event)" id="HR26" style="margin-right: 1%; width: 20%">HR26</button>
-                <button (click)="fireEvent($event)" id="HR55" style="margin-right: 1%; width: 20%">HR55</button>
-                <button (click)="fireEvent($event)" id="HR72" style="margin-right: 1%; width: 20%;">HR72</button>
+                <button (click)="numberSelect($event)" id="UP16" style="margin-right: 1%; width: 20%">UP16</button>
+                <button (click)="numberSelect($event)" id="UP14" style="margin-right: 1%; width: 20%">UP14</button>
+                <button (click)="numberSelect($event)" id="HR26" style="margin-right: 1%; width: 20%">HR26</button>
+                <button (click)="numberSelect($event)" id="HR55" style="margin-right: 1%; width: 20%">HR55</button>
+                <button (click)="numberSelect($event)" id="HR72" style="margin-right: 1%; width: 20%;">HR72</button>
               </div>
             </div>
             <div>
               <button (click)="genre='Bengaluru' " class="btn btn-warning btn-lg" style="margin-right: 5%; margin-bottom: 5%; width:40%">Bengaluru </button>
               <button (click)="genre='Mumbai' " class="btn btn-warning btn-lg" style="margin-bottom: 5%; width:45%">Mumbai </button>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Bengaluru'">
-                <button (click)="fireEvent($event)" id="KA01" style="margin-right: 1%; width: 20%">KA01</button>
-                <button (click)="fireEvent($event)" id="KA02" style="margin-right: 1%; width: 20%">KA02</button>
-                <button (click)="fireEvent($event)" id="KA03" style="margin-right: 1%; width: 20%">KA03</button>
-                <button (click)="fireEvent($event)" id="KA04" style="margin-right: 1%; width: 20%">KA04</button>
-                <button (click)="fireEvent($event)" id="KA05" style="margin-right: 1%; width: 20%">KA05</button>
-                <button (click)="fireEvent($event)" id="UKA51" style="margin-right: 1%; width: 20%">KA51</button>
-                <button (click)="fireEvent($event)" id="KA53" style="margin-right: 1%; width: 20%">KA53</button>
+                <button (click)="numberSelect($event)" id="KA01" style="margin-right: 1%; width: 20%">KA01</button>
+                <button (click)="numberSelect($event)" id="KA02" style="margin-right: 1%; width: 20%">KA02</button>
+                <button (click)="numberSelect($event)" id="KA03" style="margin-right: 1%; width: 20%">KA03</button>
+                <button (click)="numberSelect($event)" id="KA04" style="margin-right: 1%; width: 20%">KA04</button>
+                <button (click)="numberSelect($event)" id="KA05" style="margin-right: 1%; width: 20%">KA05</button>
+                <button (click)="numberSelect($event)" id="UKA51" style="margin-right: 1%; width: 20%">KA51</button>
+                <button (click)="numberSelect($event)" id="KA53" style="margin-right: 1%; width: 20%">KA53</button>
               </div>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Mumbai'">
-                <button (click)="fireEvent($event)" id="MH01" style="margin-right: 1%; width: 20%">MH01</button>
-                <button (click)="fireEvent($event)" id="MH02" style="margin-right: 1%; width: 20%">MH02</button>
-                <button (click)="fireEvent($event)" id="MH03" style="margin-right: 1%; width: 20%">MH03</button>
-                <button (click)="fireEvent($event)" id="MH47" style="margin-right: 1%; width: 20%">MH47</button>
+                <button (click)="numberSelect($event)" id="MH01" style="margin-right: 1%; width: 20%">MH01</button>
+                <button (click)="numberSelect($event)" id="MH02" style="margin-right: 1%; width: 20%">MH02</button>
+                <button (click)="numberSelect($event)" id="MH03" style="margin-right: 1%; width: 20%">MH03</button>
+                <button (click)="numberSelect($event)" id="MH47" style="margin-right: 1%; width: 20%">MH47</button>
               </div>
             </div>
             <div>
@@ -127,129 +86,104 @@
                 <button style="margin-right: 1%; width: 20%">MH04</button>
               </div>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Pune'">
-                <button (click)="fireEvent($event)" id="MH12" style=" width: 20%; margin-left: 40%">MH12</button>
-                <button (click)="fireEvent($event)" id="MH14" style=" width: 20%; margin-bottom: 3%">MH14</button>
+                <button (click)="numberSelect($event)" id="MH12" style=" width: 20%; margin-left: 40%">MH12</button>
+                <button (click)="numberSelect($event)" id="MH14" style=" width: 20%; margin-bottom: 3%">MH14</button>
               </div>
             </div>
             <div>
               <button (click)="genre='Hyderabad' " class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">Hyderabad </button>
               <button (click)="genre='Ahmedabad' " class="btn btn-warning btn-lg" style="width: 45%; margin-bottom: 5%;">Ahmedabad </button>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Hyderabad'">
-                <button (click)="fireEvent($event)" id="AP11" style="margin-right: 1%; width: 20%">AP11</button>
-                <button (click)="fireEvent($event)" id="TS09" style="margin-right: 1%; width: 20%">TS09</button>
-                <button (click)="fireEvent($event)" id="TS11" style="margin-right: 1%; width: 20%">TS11</button>
-                <button (click)="fireEvent($event)" id="TS12" style="margin-right: 1%; width: 20%">TS12</button>
-                <button (click)="fireEvent($event)" id="TS13" style="margin-right: 1%; width: 20%">TS13</button>
-                <button (click)="fireEvent($event)" id="TS14" style="margin-right: 1%; width: 20%">TS14</button>
+                <button (click)="numberSelect($event)" id="AP11" style="margin-right: 1%; width: 20%">AP11</button>
+                <button (click)="numberSelect($event)" id="TS09" style="margin-right: 1%; width: 20%">TS09</button>
+                <button (click)="numberSelect($event)" id="TS11" style="margin-right: 1%; width: 20%">TS11</button>
+                <button (click)="numberSelect($event)" id="TS12" style="margin-right: 1%; width: 20%">TS12</button>
+                <button (click)="numberSelect($event)" id="TS13" style="margin-right: 1%; width: 20%">TS13</button>
+                <button (click)="numberSelect($event)" id="TS14" style="margin-right: 1%; width: 20%">TS14</button>
               </div>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Ahmedabad'">
-                <button (click)="fireEvent($event)" id="GJ01" style="margin-left: 40%; width: 20%">GJ01</button>
+                <button (click)="numberSelect($event)" id="GJ01" style="margin-left: 40%; width: 20%">GJ01</button>
               </div>
             </div>
             <div>
               <button (click)="genre='Chennai' " class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">Chennai</button>
               <button (click)="genre='Jaipur' " class="btn btn-warning btn-lg" style="width: 45%; margin-bottom: 5%;">Jaipur </button>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Chennai'">
-                <button (click)="fireEvent($event)" id="TN01" style="margin-right: 1%; width: 20%">TN01</button>
-                <button (click)="fireEvent($event)" id="TN02" style="margin-right: 1%; width: 20%">TN02</button>
-                <button (click)="fireEvent($event)" id="TN03" style="margin-right: 1%; width: 20%">TN03</button>
-                <button (click)="fireEvent($event)" id="TN04" style="margin-right: 1%; width: 20%">TN04</button>
-                <button (click)="fireEvent($event)" id="TN05" style="margin-right: 1%; width: 20%">TN05</button>
-                <button (click)="fireEvent($event)" id="TN06" style="margin-right: 1%; width: 20%">TN06</button>
-                <button (click)="fireEvent($event)" id="TN07" style="margin-right: 1%; width: 20%">TN07</button>
-                <button (click)="fireEvent($event)" id="TN08" style="margin-right: 1%; width: 20%">TN08</button>
-                <button (click)="fireEvent($event)" id="TN09" style="margin-right: 1%; width: 20%">TN09</button>
-                <button (click)="fireEvent($event)" id="TN10" style="margin-right: 1%; width: 20%">TN10</button>
-                <button (click)="fireEvent($event)" id="TN11" style="margin-right: 1%; width: 20%">TN11</button>
-                <button (click)="fireEvent($event)" id="TN12" style="margin-right: 1%; width: 20%">TN12</button>
-                <button (click)="fireEvent($event)" id="TN13" style="margin-right: 1%; width: 20%">TN13</button>
-                <button (click)="fireEvent($event)" id="TN14" style="margin-right: 1%; width: 20%">TN14</button>
-                <button (click)="fireEvent($event)" id="TS15" style="margin-right: 1%; width: 20%">TS15</button>
+                <button (click)="numberSelect($event)" id="TN01" style="margin-right: 1%; width: 20%">TN01</button>
+                <button (click)="numberSelect($event)" id="TN02" style="margin-right: 1%; width: 20%">TN02</button>
+                <button (click)="numberSelect($event)" id="TN03" style="margin-right: 1%; width: 20%">TN03</button>
+                <button (click)="numberSelect($event)" id="TN04" style="margin-right: 1%; width: 20%">TN04</button>
+                <button (click)="numberSelect($event)" id="TN05" style="margin-right: 1%; width: 20%">TN05</button>
+                <button (click)="numberSelect($event)" id="TN06" style="margin-right: 1%; width: 20%">TN06</button>
+                <button (click)="numberSelect($event)" id="TN07" style="margin-right: 1%; width: 20%">TN07</button>
+                <button (click)="numberSelect($event)" id="TN08" style="margin-right: 1%; width: 20%">TN08</button>
+                <button (click)="numberSelect($event)" id="TN09" style="margin-right: 1%; width: 20%">TN09</button>
+                <button (click)="numberSelect($event)" id="TN10" style="margin-right: 1%; width: 20%">TN10</button>
+                <button (click)="numberSelect($event)" id="TN11" style="margin-right: 1%; width: 20%">TN11</button>
+                <button (click)="numberSelect($event)" id="TN12" style="margin-right: 1%; width: 20%">TN12</button>
+                <button (click)="numberSelect($event)" id="TN13" style="margin-right: 1%; width: 20%">TN13</button>
+                <button (click)="numberSelect($event)" id="TN14" style="margin-right: 1%; width: 20%">TN14</button>
+                <button (click)="numberSelect($event)" id="TS15" style="margin-right: 1%; width: 20%">TS15</button>
               </div>
               <div style="margin-bottom: 3%" *ngSwitchCase="'Jaipur'">
-                <button (click)="fireEvent($event)" id="RJ14" style="margin-left: 40%; width: 20%">RJ14</button>
+                <button (click)="numberSelect($event)" id="RJ14" style="margin-left: 40%; width: 20%">RJ14</button>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Third Frame (Manufacturer) -->
-        <div *ngSwitchCase="'manufacturer'">
-
-          <div [ngSwitch]="genre">
-            <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
-              <button (click)="frame='companyRTO'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Back</button>
-              <h2>Select a Manufacturer</h2>
-              <!-- <button (click)="frame='modelVariant'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
-            </div>
-            <div class="manufacturer_di" style="display: flex; align-content: center; flex-direction: column; border: 1px black solid; flex-wrap: wrap">
-              <div class="manufacturer_di">
-                <button (click)="typeEvent($event)" id="honda" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HONDA</button>
-                <button (click)="typeEvent($event)" id="bajaj" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">BAJAJ</button>
-              </div>
-              <div class="manufacturer_di">
-                <button (click)="typeEvent($event)" id="hero" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HERO HONDA</button>
-                <button (click)="typeEvent($event)" id="tvs" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">TVS</button>  
-              </div>
-              <div class="manufacturer_di">
-                <button (click)="typeEvent($event)" id="yamaha" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">YAMAHA</button>
-                <button (click)="typeEvent($event)" id="suzuki" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SUZUKI</button>
-              </div>
-              <div class="manufacturer_di">
-                <button (click)="typeEvent($event)" id="mahi" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">MAHINDRA</button>
-                <button (click)="typeEvent($event)" id="ktm" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">KTM</button>
-              </div>
-              <div class="manufacturer_di">
-                <button (click)="typeEvent($event)" id="harley" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HARLEY DAVIDSON</button>
-              </div>
-            </div>
+        <div *ngSwitchCase="'manufacturer'" style="text-align: center">
+          <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: flex-start">
+            <button (click)="frame='companyRTO'" class="btn btn-primary btn-lg" style="height: 70%;">Back</button>
+            <!-- <button (click)="frame='modelVariant'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
           </div>
+          <h2 style="margin: 5%">Select a Manufacturer</h2>
+          <button (click)="manufactureSelect($event)" id="honda" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HONDA</button>
+          <button (click)="manufactureSelect($event)" id="bajaj" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">BAJAJ</button>
+          <button (click)="manufactureSelect($event)" id="hero" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HERO HONDA</button>
+          <button (click)="manufactureSelect($event)" id="tvs" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">TVS</button>
+          <button (click)="manufactureSelect($event)" id="yamaha" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">YAMAHA</button>
+          <button (click)="manufactureSelect($event)" id="suzuki" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SUZUKI</button>
+          <button (click)="manufactureSelect($event)" id="mahi" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">MAHINDRA</button>
+          <button (click)="manufactureSelect($event)" id="ktm" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">KTM</button>
+          <button (click)="manufactureSelect($event)" id="harley" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">HARLEY DAVIDSON</button>
         </div>
 
         <!-- Fourth Frame (Model and Variant) -->
-        <div *ngSwitchCase="'modelVariant'">
-          <div [ngSwitch]="genre">
-            <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
-              <button (click)="frame='manufacturer'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Back</button>
-              <h2>Select a Model</h2>
-              <!-- <button (click)="frame='registrationYear'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
-
-            </div>
-            <button (click)="modEvent($event)" id="APACHE" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">APACHE</button>
-            <button (click)="modEvent($event)" id="JUPITER" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">JUPITER</button>
-            <button (click)="modEvent($event)" id="SCOOTY" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SCOOTY</button>
-            <button (click)="modEvent($event)" id="VEGO" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">VEGO</button>
-            <button (click)="modEvent($event)" id="STAR CITY" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">STAR CITY</button>
-            <button (click)="modEvent($event)" id="SPORT" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SPORT</button>
-            <button (click)="modEvent($event)" id="VICTOR" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">VICTOR</button>
-            <button (click)="modEvent($event)" id="XL SUPER" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">XL SUPER</button>
-            <button (click)="modEvent($event)" id="ZEST" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">ZEST</button>
+        <div *ngSwitchCase="'modelVariant'" style="text-align: center">
+          <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: flex-start">
+            <button (click)="frame='manufacturer'" class="btn btn-primary btn-lg" style="height: 70%;">Back</button>
+            <!-- <button (click)="frame='registrationYear'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
           </div>
+          <h2 style="margin: 5%">Select a Model</h2>
+          <button (click)="modelSelect($event)" id="APACHE" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">APACHE</button>
+          <button (click)="modelSelect($event)" id="JUPITER" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">JUPITER</button>
+          <button (click)="modelSelect($event)" id="SCOOTY" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SCOOTY</button>
+          <button (click)="modelSelect($event)" id="VEGO" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">VEGO</button>
+          <button (click)="modelSelect($event)" id="STAR CITY" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">STAR CITY</button>
+          <button (click)="modelSelect($event)" id="SPORT" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">SPORT</button>
+          <button (click)="modelSelect($event)" id="VICTOR" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">VICTOR</button>
+          <button (click)="modelSelect($event)" id="XL SUPER" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">XL SUPER</button>
+          <button (click)="modelSelect($event)" id="ZEST" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">ZEST</button>
         </div>
 
-
-
         <!-- Fifth Frame (Registration Year) -->
-        <div *ngSwitchCase="'registrationYear'">
-
-          <div [ngSwitch]="genre">
-            <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: space-around">
-
-              <h2>Select a Registration Year</h2>
-              <!-- <button (click)="frame='#'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
-
-            </div>
-            <button (click)="regEvent($event)" id="2017" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2017</button>
-            <button (click)="regEvent($event)" id="2016" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2016</button>
-            <button (click)="regEvent($event)" id="2015" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2015</button>
-            <button (click)="regEvent($event)" id="2014" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2014</button>
-            <button (click)="regEvent($event)" id="2013" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2013</button>
-            <button (click)="regEvent($event)" id="2012" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2012</button>
-            <button (click)="regEvent($event)" id="2011" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2011</button>
-            <button (click)="regEvent($event)" id="2010" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2010</button>
-            <button (click)="regEvent($event)" id="2009" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2009</button>
+        <div *ngSwitchCase="'registrationYear'" style="text-align: center">
+          <div style="margin-top: 5%; margin-bottom: 5%; display: flex; flex-direction: row; justify-content: flex-start">
+            <button (click)="frame='modelVariant'" class="btn btn-primary btn-lg" style="height: 70%;">Back</button>
+            <!-- <button (click)="frame='#'" class="btn btn-primary btn-lg" style="height: 70%; align-self: center">Next</button> -->
           </div>
-
+          <h2 style="margin: 5%">Select a Registration Year</h2>
+          <button (click)="registrationSelect($event)" id="2017" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2017</button>
+          <button (click)="registrationSelect($event)" id="2016" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2016</button>
+          <button (click)="registrationSelect($event)" id="2015" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2015</button>
+          <button (click)="registrationSelect($event)" id="2014" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2014</button>
+          <button (click)="registrationSelect($event)" id="2013" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2013</button>
+          <button (click)="registrationSelect($event)" id="2012" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2012</button>
+          <button (click)="registrationSelect($event)" id="2011" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2011</button>
+          <button (click)="registrationSelect($event)" id="2010" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2010</button>
+          <button (click)="registrationSelect($event)" id="2009" class="btn btn-warning btn-lg" style="width: 40%; margin-right: 5%; margin-bottom: 5%">2009</button>
         </div>
         <!-- Frame Switch div end -->
       </div>

@@ -1,57 +1,29 @@
-
-  <div class="container" style="background-color:#ffc6b3; background-size: 100%">
-      <div class="row">
-          <div class="col-lg-12">
-
-              <form [formGroup]="step1">
-
-
-
-
-                  <div class="form-group">
-
-                      <label for="">Username</label>
-                      <input name="username" formControlName="username" type="text" class="form-control" id="username" style="width: 40%">
-
-                  </div>
-
-
-                  <div class="form-group">
-
-                      <label for="">Email</label>
-                      <input formControlName="email" name="email" type="text" class="form-control" id="email" style="width: 40%">
-
-                  </div>
-
-                  <div class="form-group">
-
-                      <label for="">Mobile No</label>
-                      <input formControlName="mobile" name="mobile" type="text" class="form-control" id="mobile" style="width: 40%">
-
-                  </div>
-
-                  <div class="form-group">
-
-                      <label for="">Communication Address</label>
-                      <input formControlName="add" name="add" type="text" class="form-control" id="add" style="width: 40%">
-
-                  </div>
-                  <div class="form-group">
-
-                      <label for="">Pin Code</label>
-                      <input formControlName="pin" name="pin" type="text" class="form-control" id="pin" style="width: 40%">
-
-                  </div>
-
-
-                  <div class="form-group">
-                      <button class="btn btn-primary btn-lg" (click)="go()">
-                          CONTINE TO STEP 2
-                      </button>
-                  </div>
-              </form>
-
-          </div>
-      </div>
-  </div>
-
+<div class="container" style="border: 0px black solid; display: table">
+    <div style="border: 0px black solid; width: 40%; margin: 0 auto">
+        <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <div class="form-group">
+                <label>Username</label>
+                <input [(ngModel)]="formData.username" name="username" #username="ngModel" required style="width: 100%" type="text" placeholder="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input [(ngModel)]="formData.email" name="email" #email="ngModel" required style="width: 100%" type="email" placeholder="email"lass="form-control">
+            </div>
+            <div class="form-group">
+                <label>Contact</label>
+                <input [(ngModel)]="formData.contact" name="contact" #contact="ngModel" required style="width: 100%" type="number" placeholder="contact" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Communication Address</label>
+                <input [(ngModel)]="formData.address" name="address" #address="ngModel" required style="width: 100%" type="text" placeholder="communication address" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Pin Code</label>
+                <input [(ngModel)]="formData.pin" name="pin" #pin="ngModel" required style="width: 100%" type="number" placeholder="pin code" class="form-control">
+            </div>
+            <div style="text-align: end">
+                <input type="submit" style="width: 250px" class="btn btn-primary" value="Process To Next Step">
+            </div>
+        </form>
+    </div>
+</div>

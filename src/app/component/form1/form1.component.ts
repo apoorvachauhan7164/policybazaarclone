@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { FormGroup, FormControl } from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
@@ -10,8 +8,23 @@ import {Router} from '@angular/router';
 })
 export class Form1Component {
   constructor(private router: Router) {}
-
+  formData = {
+    username: '',
+    email: '',
+    contact: '',
+    address: '',
+    pin: ''
+  };
   go() {
     this.router.navigate(['second']);
+  }
+
+  onSubmit({value, valid}) {
+    if (valid) {
+      console.log(value);
+      this.go();
+    } else {
+      console.log('Form data invalid');
+    }
   }
 }

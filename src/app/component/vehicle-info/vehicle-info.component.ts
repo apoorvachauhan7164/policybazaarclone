@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { Vehicle } from '../../services/vehicle.model';
+import { VehicleService } from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-vehicle-info',
@@ -8,39 +10,46 @@ import {Router} from '@angular/router';
 })
 export class VehicleInfoComponent {
 
+  vehicle: Vehicle = new Vehicle();
+
   // frame => manufacturer, modelVariant, registrationYear, companyRTO
   frame: string;
+  genre: string;
   formData = {
     rtoNumber: '',
-    manufac: '',
+    manufacturer: '',
     model: '',
-    regs: ''
+    registration: ''
   };
-  constructor(private router: Router) {
+  constructor(private router: Router, private vehicleService: VehicleService) {
     this.frame = 'companyRTO';
    }
 
-  fireEvent(e) {
+  numberSelect(e) {
    console.log(e.target.id);
    this.formData.rtoNumber = e.target.id.toUpperCase();
+   this.vehicle.companyRTO = this.formData.rtoNumber;
    this.frame = 'manufacturer';
   }
 
-  typeEvent(e) {
+  manufactureSelect(e) {
    console.log(e.target.id);
-   this.formData.manufac = e.target.id.toUpperCase();
+   this.formData.manufacturer = e.target.id.toUpperCase();
+   this.vehicle.manufacturer = this.formData.manufacturer;
    this.frame = 'modelVariant';
   }
 
-  modEvent(e) {
+  modelSelect(e) {
    console.log(e.target.id);
    this.formData.model = e.target.id.toUpperCase();
+   this.vehicle.modelVariant = this.formData.model;
    this.frame = 'registrationYear';
   }
 
-  regEvent(e) {
+  registrationSelect(e) {
    console.log(e.target.id);
-   this.formData.regs = e.target.id.toUpperCase();
+   this.formData.registration = e.target.id.toUpperCase();
+   this.vehicle.registrationYear = +this.formData.registration; // converts string to integer (not number)
   }
 
   goToCards() {
@@ -50,6 +59,8 @@ export class VehicleInfoComponent {
   onSubmit({value, valid}) {
     if (valid) {
       console.log(value);
+      this.vehicleService.sharedResource.vehicleInfo = this.vehicle;
+      console.log(this.vehicleService.sharedResource);
       this.goToCards();
     } else {
       console.log('Form is invalid');

@@ -1,42 +1,34 @@
-
-<div class="container" style="background-color:#ffc6b3; background-size: 100%">
-  <div class="row">
-      <div class="col-xs-8">
-          <form [formGroup]="step2">
-              
+<div class="container" style="border: 0px black solid; display: table">
+    <div style="border: 0px black solid; width: 40%; margin: 0 auto">
+        <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
             <div class="form-group">
-                  <label for="">Nominee Name</label>
-                  <input name="nominee" formControlName="nominee" type="text" class="form-control" id="naminee" style="width: 60%">
-              </div>
-              
-              <div class="form-group">
-                  <label for="">Nominee Relationship</label>
-                  <input formControlName="rltn" name="rltn" type="text" class="form-control" id="rltn" style="width: 60%">
-              </div>
-
-              <div class="form-group">
-                  <label for="">Nominee Age</label>
-                  <input formControlName="age" name="age" type="text" class="form-control" id="age" style="width: 60%">
-              </div>
-
-              <div class="form-group">
-                  <label for="">Communication Address</label>
-                  <input formControlName="add" name="add" type="text" class="form-control" id="add" style="width: 60%">
-              </div>
-
-              <div class="form-group">
-                  <label for="">Pin Code</label>
-                  <input formControlName="pin" name="pin" type="text" class="form-control" id="pin" style="width: 60%">
-              </div>
-
-              <div class="form-group">
-                  <button class="btn btn-primary btn-lg" (click)="go()">
-                      CONTINE TO STEP 3
-                  </button>
-              </div>
-
-          </form>
-      </div>
-  </div>
+                <label>Full Name</label>
+                <input [(ngModel)]="formData.name" name="name" #name="ngModel" required style="width: 100%" type="text" placeholder="name"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Relationship</label>
+                <input [(ngModel)]="formData.relationship" name="relationship" #relationship="ngModel" required style="width: 100%" type="email" placeholder="relationship"
+                    lass="form-control">
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input [(ngModel)]="formData.age" name="age" #age="ngModel" required style="width: 100%" type="number" placeholder="age"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Communication Address</label>
+                <input [(ngModel)]="formData.address" name="address" #address="ngModel" required style="width: 100%" type="text" placeholder="communication address"
+                    class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Pin Code</label>
+                <input [(ngModel)]="formData.pin" name="pin" #pin="ngModel" required style="width: 100%" type="number" placeholder="pin code"
+                    class="form-control">
+            </div>
+            <div style="text-align: end">
+                <input type="submit" style="width: 250px" class="btn btn-primary" value="Process To Next Step">
+            </div>
+        </form>
+    </div>
 </div>
-
