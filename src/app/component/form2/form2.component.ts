@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-
-
+import { VehicleService } from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-form2',
@@ -16,7 +15,7 @@ export class Form2Component {
     address: '',
     pin: null
   };
-  constructor(private router: Router) {}
+  constructor(private router: Router, private vehicleService: VehicleService) {}
 
   go() {
     this.router.navigate(['third']);
@@ -25,6 +24,8 @@ export class Form2Component {
   onSubmit({value, valid}) {
     if (valid) {
       console.log(value);
+      this.vehicleService.sharedResource.formTwoData = this.formData;
+      console.log(this.vehicleService.sharedResource);
       this.go();
     } else {
       console.log('Form data is invalid');

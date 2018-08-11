@@ -2,27 +2,27 @@
     <div style="border: 0px black solid; width: 40%; margin: 0 auto">
         <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
             <div class="form-group">
-                <label>Full Name</label>
+                <label>Full Name<span style="color: red; font-size: 1.2em">*</span></label>
                 <input [(ngModel)]="formData.name" name="name" #name="ngModel" required style="width: 100%" type="text" placeholder="name"
                     class="form-control">
             </div>
             <div class="form-group">
-                <label>Relationship</label>
+                <label>Relationship<span style="color: red; font-size: 1.2em">*</span></label>
                 <input [(ngModel)]="formData.relationship" name="relationship" #relationship="ngModel" required style="width: 100%" type="email" placeholder="relationship"
                     lass="form-control">
             </div>
             <div class="form-group">
-                <label>Age</label>
+                <label>Age<span style="color: red; font-size: 1.2em">*</span></label>
                 <input [(ngModel)]="formData.age" name="age" #age="ngModel" required style="width: 100%" type="number" placeholder="age"
                     class="form-control">
             </div>
             <div class="form-group">
-                <label>Communication Address</label>
+                <label>Communication Address<span style="color: red; font-size: 1.2em">*</span></label>
                 <input [(ngModel)]="formData.address" name="address" #address="ngModel" required style="width: 100%" type="text" placeholder="communication address"
                     class="form-control">
             </div>
             <div class="form-group">
-                <label>Pin Code</label>
+                <label>Pin Code<span style="color: red; font-size: 1.2em">*</span></label>
                 <input [(ngModel)]="formData.pin" name="pin" #pin="ngModel" required style="width: 100%" type="number" placeholder="pin code"
                     class="form-control">
             </div>

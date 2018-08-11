@@ -1,133 +1,122 @@
+<div class="container" style="display: table">
+  <div style="width: 40%; margin: 0 auto; margin-bottom: 50px; border: 0px black solid">
+    <form novalidate #feed="ngForm" (ngSubmit)="onSubmit(feed)">
+      <div class="form-group">
+        <label>Registration Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input
+        [(ngModel)]="formData.registration" 
+        name="registration" 
+        #registration="ngModel"
+        name="nominee" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
 
-    
-<div class="container" style="background-color:#ffc6b3; background-size: 100%">
-    <div class="row">
-        <div class="col-xs-8">
-            <form [formGroup]="step2">
-                
-              <div class="form-group">
-                    <label for="">Registration No</label>
-                    <input name="nominee" formControlName="reg" type="text" class="form-control" id="reg">
-                </div>
-                
-                <div class="form-group">
-                    <label for="">Engine Number</label>
-                    <input formControlName="engine" name="engine" type="text" class="form-control" id="engine">
-                </div>
-  
-                <div class="form-group">
-                    <label for="">Classic Number</label>
-                    <input formControlName="classic" name="classic" type="text" class="form-control" id="classic">
-                </div>
-  
-                <div class="form-group">
-                    <label for="">Previous Insurer</label>
-                    <input formControlName="insurer" name="insurer" type="text" class="form-control" id="insurer">
-                </div>
-  
-                <div class="form-group">
-                    <label for="">Previous Policy No</label>
-                    <input formControlName="policy" name="policy" type="text" class="form-control" id="policy">
-                </div>
-                
-                <div class="form-group">
-                    <label>Previous Policy Expiry Date
-                      <p>
-                      <select>
-                      <option>Months</option>
-                        <option>JAN</option>
-                        <option>FEB</option>
-                        <option>MARCH</option>
-                      </select>
-                          <select>
-                      <option>Day</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
-                      <select>
-                      <option>Year</option>
-                        <option>1995</option>
-                        <option>1996</option>
-                        <option>1997</option>
-                      </select>
-                      </p>
-                  
-                      </label>
-                  
-                      
-                  </div>
-                  <div class="form-group">
-                      <label>Registration Date
-                        <p>
-                        <select>
-                        <option>Months</option>
-                          <option>JAN</option>
-                          <option>FEB</option>
-                          <option>MARCH</option>
-                        </select>
-                            <select>
-                        <option>Day</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                        </select>
-                        <select>
-                        <option>Year</option>
-                          <option>1995</option>
-                          <option>1996</option>
-                          <option>1997</option>
-                        </select>
-                        </p>
-                    
-                        </label>
-                    
-                        
-                    </div>
-                    <div class="form-group">
-                        <label>Was there any claim last year? </label>
-                      
-                      <!-- Radio and checkboxes work much the same way -->
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="yes" value="yes" ngModel>
-                          yes
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="no" value="no" ngModel>
-                          no
-                        </label>
-                      </div>
-                      </div>
-                      <div class="form-group">
-                          <label>Is the name of owner on RC and insurance policy same? </label>
-                        
-                        <!-- Radio and checkboxes work much the same way -->
-                        <div class="radio">
-                          <label>
-                            <input type="radio" name="yes" value="yes" ngModel>
-                            yes
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <label>
-                            <input type="radio" name="no" value="no" ngModel>
-                            no
-                          </label>
-                        </div>
-                        </div>
-  
-                <div class="form-group">
-                    <button class="btn btn-primary btn-lg">
-                        SAVE AND PROCEED
-                    </button>
-                </div>
-  
-            </form>
+      <div class="form-group">
+        <label>Engine Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input
+        [(ngModel)]="formData.engine"
+        name="engine"
+        #engine="ngModel"
+        name="engine" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Classic Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input 
+        [(ngModel)]="formData.classic"
+        name="classic"
+        #classic="ngModel"
+        name="classic" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Previous Insurer<span style="color: red; font-size: 1.2em">*</span></label>
+        <input 
+        [(ngModel)]="formData.prevInsurer"
+        name="prevInsurer"
+        #prevInsurer="ngModel"
+        name="insurer" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Previous Policy Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input 
+        [(ngModel)]="formData.prevPolicy"
+        name="prevPolicy"
+        #prevPolicy="ngModel"
+        name="policy" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Previous Policy Expiry Date<span style="color: red; font-size: 1.2em">*</span>
+          <div>
+            <select>
+              <option *ngFor="let month of months">{{month}}</option>
+            </select>
+            <select>
+              <option *ngFor="let day of days">{{day}}</option>
+            </select>
+            <select>
+              <option *ngFor="let year of years">{{year}}</option>
+            </select>
+          </div>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Registration Date<span style="color: red; font-size: 1.2em">*</span>
+          <div>
+            <select>
+              <option *ngFor="let month of months">{{month}}</option>
+            </select>
+            <select>
+              <option *ngFor="let day of days">{{day}}</option>
+            </select>
+            <select>
+              <option *ngFor="let year of years">{{year}}</option>
+            </select>
+          </div>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Was there any claim last year?<span style="color: red; font-size: 1.2em">*</span></label>
+        <!-- Radio and checkboxes work much the same way -->
+        <div>
+          <input type="radio" name="claim" value="yes"> Yes &nbsp;&nbsp;
+          <input type="radio" name="claim" value="no"> No
         </div>
-    </div>
+      </div>
+      <div class="form-group">
+        <label>Is the name of owner on RC and insurance policy same?<span style="color: red; font-size: 1.2em">*</span></label>
+        <!-- Radio and checkboxes work much the same way -->
+        <div>
+          <input type="radio" name="owner" value="yes" ngModel> Yes &nbsp;&nbsp;
+          <input type="radio" name="owner" value="no" ngModel> No
+        </div>
+      </div>
+      <div style="text-align: end">
+        <input class="btn btn-primary" type="submit" value="Save and Submit" style="width: 30%">
+      </div>
+    </form>
   </div>
-  
-  
+</div>
