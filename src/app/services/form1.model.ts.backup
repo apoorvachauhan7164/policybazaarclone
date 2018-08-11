@@ -1,0 +1,7 @@
+export class FormOne {
+    username: string;
+    email: string;
+    contact: number;
+    address: string;
+    pin: number;
+}

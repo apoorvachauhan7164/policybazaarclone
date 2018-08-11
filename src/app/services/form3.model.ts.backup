@@ -1,0 +1,7 @@
+export class FormThree {
+    registration: number;
+    engine: number;
+    classic; number;
+    insurer: string;
+    policy: number;
+}

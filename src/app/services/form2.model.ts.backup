@@ -1,0 +1,7 @@
+export class FormTwo {
+    name: string;
+    relationship: string;
+    age: string;
+    address: string;
+    pin: string;
+}
