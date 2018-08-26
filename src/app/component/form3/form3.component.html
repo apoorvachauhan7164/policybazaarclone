@@ -69,14 +69,15 @@
       <div class="form-group">
         <label>Previous Policy Expiry Date<span style="color: red; font-size: 1.2em">*</span>
           <div>
-            <select>
-              <option *ngFor="let month of months">{{month}}</option>
+            <!--  -->
+            <select required [(ngModel)]="formData.prevPolicyDate.month" name="prevMonth">
+              <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
             </select>
-            <select>
-              <option *ngFor="let day of days">{{day}}</option>
+            <select required [(ngModel)]="formData.prevPolicyDate.day" name="prevDay">
+              <option *ngFor="let day of days" [ngValue]="day">{{day}}</option>
             </select>
-            <select>
-              <option *ngFor="let year of years">{{year}}</option>
+            <select required [(ngModel)]="formData.prevPolicyDate.year" name="prevYear">
+              <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
             </select>
           </div>
         </label>
@@ -85,14 +86,14 @@
       <div class="form-group">
         <label>Registration Date<span style="color: red; font-size: 1.2em">*</span>
           <div>
-            <select>
-              <option *ngFor="let month of months">{{month}}</option>
+            <select required [(ngModel)]="formData.registrationDate.month" name="registrationMonth">
+              <option *ngFor="let month of months" [ngValue]="month">{{month}}</option>
             </select>
-            <select>
-              <option *ngFor="let day of days">{{day}}</option>
+            <select required [(ngModel)]="formData.registrationDate.day" name="registrationDay">
+              <option *ngFor="let day of days" [ngValue]="day">{{day}}</option>
             </select>
-            <select>
-              <option *ngFor="let year of years">{{year}}</option>
+            <select required [(ngModel)]="formData.registrationDate.year" name="registrationYear">
+              <option *ngFor="let year of years" [ngValue]="year">{{year}}</option>
             </select>
           </div>
         </label>
@@ -102,16 +103,16 @@
         <label>Was there any claim last year?<span style="color: red; font-size: 1.2em">*</span></label>
         <!-- Radio and checkboxes work much the same way -->
         <div>
-          <input type="radio" name="claim" value="yes"> Yes &nbsp;&nbsp;
-          <input type="radio" name="claim" value="no"> No
+          <input required (change)="claimLastYear('yes')" type="radio" name="claim" value="yes"> Yes &nbsp;&nbsp;
+          <input required (change)="claimLastYear('no')" type="radio" name="claim" value="no"> No
         </div>
       </div>
       <div class="form-group">
         <label>Is the name of owner on RC and insurance policy same?<span style="color: red; font-size: 1.2em">*</span></label>
         <!-- Radio and checkboxes work much the same way -->
         <div>
-          <input type="radio" name="owner" value="yes" ngModel> Yes &nbsp;&nbsp;
-          <input type="radio" name="owner" value="no" ngModel> No
+          <input required (change)="ownerSame('yes')" type="radio" name="owner" value="yes" ngModel> Yes &nbsp;&nbsp;
+          <input required (change)="ownerSame('no')" type="radio" name="owner" value="no" ngModel> No
         </div>
       </div>
       <div style="text-align: end">

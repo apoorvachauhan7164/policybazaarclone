@@ -1,0 +1,178 @@
+<div class="row">
+  <div class="col-lg-6" style="background-color:#aaa;">
+    <form novalidate #feed="ngForm" (ngSubmit)="onSubmit(feed)">
+      <div class="form-group" style="text-align: center; margin-bottom: 10%; margin-top: 5%">
+        <h2>Your Vehicle Details</h2>
+        <!-- City and RTO -->
+        <input disabled [value]="state.vehicleInfo.companyRTO" type="text" class="form-control" id="username"
+          placeholder="Select City & RTO" style="width: 90%; margin-bottom: 3%; margin-left: 5%" required>
+        <!-- Manufacture -->
+        <input disabled [value]="state.vehicleInfo.manufacturer" type="text" class="form-control"
+          id="manufacturer" required placeholder="Manufacturer" style="width: 90%; margin-bottom: 3%; margin-left: 5%">
+        <!-- Model and Variant -->
+        <input disabled [value]="state.vehicleInfo.modelVariant" type="text" class="form-control" id="Model & Variant"
+          placeholder="Model & Variant" style="width: 90%; margin-bottom: 3%;margin-left: 5%" required>
+        <!-- Registration Number -->
+        <input disabled [value]="state.vehicleInfo.registrationYear" type="text" class="form-control" id="Registration Year" placeholder="Registration Year" style="width: 90%; margin-bottom: 3%; margin-left: 5%" req>
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-6" style="background-color:#bbb;">
+    <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-group" style="text-align: center; margin-bottom: 10%; margin-top: 5%">
+        <!-- username -->
+        <label>Username<span style="color: red; font-size: 1.2em">*</span></label>
+        <input disabled [value]="state.formOneData.username" name="username"  required style="width: 100%" type="text" placeholder="username" class="form-control">
+        <!-- email -->
+        <label>Email</label>
+        <input disabled [value]="state.formOneData.email" name="email" required style="width: 100%" type="email" placeholder="email" class="form-control">
+        <!-- contact -->
+        <label>Contact<span style="color: red; font-size: 1.2em">*</span></label>
+        <input disabled [value]="state.formOneData.contact" name="contact" required style="width: 100%" type="number" placeholder="contact" class="form-control">
+        <!-- comm address -->
+        <label>Communication Address<span style="color: red; font-size: 1.2em">*</span></label>
+        <input disabled [value]="state.formOneData.address" name="address" required style="width: 100%" type="text" placeholder="communication address" class="form-control">
+        <!-- Pin code -->
+        <label>Pin Code<span style="color: red; font-size: 1.2em">*</span></label>
+        <input disabled [value]="state.formOneData.pin" name="pin" required style="width: 100%" type="number" placeholder="pin code" class="form-control">
+      </div>
+  </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6" style="background-color:#ccc;">
+    <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-group" style="text-align: center; margin-bottom: 10%; margin-top: 5%">
+          <label>Full Name<span style="color: red; font-size: 1.2em">*</span></label>
+          <input disabled [value]="state.formTwoData.name" name="name"  required style="width: 100%" type="text" placeholder="name"
+              class="form-control">
+          <label>Relationship<span style="color: red; font-size: 1.2em">*</span></label>
+          <input disabled [value]="state.formTwoData.relationship" name="relationship" required style="width: 100%" type="email" placeholder="relationship"
+              class="form-control">
+          <label>Age<span style="color: red; font-size: 1.2em">*</span></label>
+          <input disabled [value]="state.formTwoData.age" name="age"  required style="width: 100%" type="number" placeholder="age"
+              class="form-control">
+          <label>Communication Address<span style="color: red; font-size: 1.2em">*</span></label>
+          <input disabled [value]="state.formTwoData.address" name="address"  required style="width: 100%" type="text" placeholder="communication address"
+              class="form-control">
+          <label>Pin Code<span style="color: red; font-size: 1.2em">*</span></label>
+          <input disabled [value]="state.formTwoData.pin" name="pin" required style="width: 100%" type="number" placeholder="pin code"
+              class="form-control">
+      </div>
+  </form>
+  </div>
+  <div class="col-lg-6" style="background-color:#ddd;">
+    <form novalidate #feed="ngForm" (ngSubmit)="onSubmit(feed)">
+      <div class="form-group">
+        <label>Registration Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input
+        disabled [value]="state.formThreeData.registration"
+        name="registration" 
+        name="nominee" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Engine Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input
+        disabled [value]="state.formThreeData.engine"
+        name="engine"
+        name="engine" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Classic Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input 
+        disabled [value]="state.formThreeData.classic"
+        name="classic"
+        name="classic" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Previous Insurer<span style="color: red; font-size: 1.2em">*</span></label>
+        <input 
+        disabled [value]="state.formThreeData.prevInsurer"
+        name="prevInsurer"
+        name="insurer" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Previous Policy Number<span style="color: red; font-size: 1.2em">*</span></label>
+        <input 
+        disabled [value]="state.formThreeData.prevPolicy"
+        name="prevPolicy"
+        name="policy" 
+        type="text" 
+        class="form-control"
+        required
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Previous Policy Expiry Date<span style="color: red; font-size: 1.2em">*</span>
+          <div>
+            <select disabled> 
+              <option>{{state.formThreeData.prevPolicyDate.month}}</option>
+            </select>
+            <select>
+              <option>{{state.formThreeData.prevPolicyDate.day}}</option>
+            </select>
+            <select>
+              <option>{{state.formThreeData.prevPolicyDate.year}}</option>
+            </select>
+          </div>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Registration Date<span style="color: red; font-size: 1.2em">*</span>
+          <div>
+            <select>
+              <option>{{state.formThreeData.registrationDate.month}}</option>
+            </select>
+            <select>
+              <option>{{state.formThreeData.registrationDate.day}}</option>
+            </select>
+            <select>
+              <option>{{state.formThreeData.registrationDate.year}}</option>
+            </select>
+          </div>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Was there any claim last year?<span style="color: red; font-size: 1.2em">*</span></label>
+        <!-- Radio and checkboxes work much the same way -->
+        <div>
+          <input disabled type="radio" name="claim" [value]="yes" [(ngModel)]="state.formThreeData.claimLast"> Yes &nbsp;&nbsp;
+          <input disabled type="radio" name="claim" [value]="no" [(ngModel)]="state.formThreeData.claimLast"> No
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Is the name of owner on RC and insurance policy same?<span style="color: red; font-size: 1.2em">*</span></label>
+        <!-- Radio and checkboxes work much the same way -->
+        <div>
+          <input type="radio" name="owner" [value]="true" [(ngModel)]="state.formThreeData.sameOwner"> Yes &nbsp;&nbsp;
+          <input type="radio" name="owner"[value]="false" [(ngModel)]="state.formThreeData.sameOwner"> No
+        </div>
+      </div>
+     
+    </form>
+  </div>
+</div>

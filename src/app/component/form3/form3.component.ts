@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VehicleService } from '../../services/vehicle.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-form3',
@@ -16,9 +17,21 @@ export class Form3Component implements OnInit {
     classic: '',
     prevInsurer: '',
     prevPolicy: '',
+    prevPolicyDate: {
+      month: 'Month',
+      day: 'Day',
+      year: 'Year'
+    },
+    registrationDate: {
+      month: 'Month',
+      day: 'Day',
+      year: 'Year'
+    },
+    claimLast: null,
+    sameOwner: null
   };
   currentYear: number;
-  constructor(private vehicleService: VehicleService) {
+  constructor(private vehicleService: VehicleService, private router: Router) {
     this.currentYear = (new Date().getFullYear());
   }
 
@@ -51,11 +64,31 @@ export class Form3Component implements OnInit {
     }
   }
 
+  prevDate(event) {
+    console.log(event);
+    console.log(this.formData.prevPolicyDate);
+  }
+
+  ownerSame(value) {
+    this.formData.sameOwner = value;
+    console.log('ownerSame: ', value);
+  }
+
+  claimLastYear(value) {
+    this.formData.claimLast = value;
+    console.log('claimLastYear: ', value);
+  }
+
+  goToFinalDetails() {
+    this.router.navigate(['final-details']);
+  }
+
   onSubmit({value, valid}) {
     if (valid) {
       console.log(value);
       this.vehicleService.sharedResource.formThreeData = this.formData;
       console.log(this.vehicleService.sharedResource);
+      this.goToFinalDetails();
     } else {
       console.log('Form data is invalid');
     }

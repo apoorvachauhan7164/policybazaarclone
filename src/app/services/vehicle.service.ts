@@ -6,7 +6,6 @@ import { Vehicle } from './vehicle.model';
   providedIn: 'root'
 })
 export class VehicleService {
-
   public sharedResource: LooseObject = {};
   private dbPath = '/vehicles';
   vehicleRef: AngularFireList<Vehicle> = null;

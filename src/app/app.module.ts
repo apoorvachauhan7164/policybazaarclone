@@ -14,6 +14,7 @@ import { Form2Component } from './component/form2/form2.component';
 import { Form3Component } from './component/form3/form3.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { VehicleInfoComponent } from './component/vehicle-info/vehicle-info.component';
+import { FinalDetailsComponent } from './component/final-details/final-details.component';
 
 
 const appRoutes: Routes = [
@@ -22,7 +23,9 @@ const appRoutes: Routes = [
   {path: 'cards', component: CardsComponent},
   {path: 'form', component: Form1Component},
   {path: 'second', component: Form2Component},
-  {path: 'third', component: Form3Component}
+  {path: 'third', component: Form3Component},
+  {path: 'final-details', component: FinalDetailsComponent}
+
 ];
 
 @NgModule({
@@ -34,7 +37,8 @@ const appRoutes: Routes = [
     Form2Component,
     Form3Component,
     NavbarComponent,
-    VehicleInfoComponent
+    VehicleInfoComponent,
+    FinalDetailsComponent
   ],
   imports: [
     BrowserModule,
